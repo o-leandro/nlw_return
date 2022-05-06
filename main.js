@@ -1,10 +1,28 @@
-function onScroll() {
-   if (scrollY > 0) {
-      navigation.classList.add('scroll');
+window.addEventListener('scroll', onScroll);
 
-   } else {
-      navigation.classList.remove('scroll');
-   }
+onScroll();
+
+function onScroll() {
+  showNavOnScroll();
+  showBackToTopButtonOnScroll();
+}
+
+function showNavOnScroll() {
+  if (scrollY > 0) {
+    navigation.classList.add('scroll');
+
+ } else {
+    navigation.classList.remove('scroll');
+ }
+}
+
+function showBackToTopButtonOnScroll() {
+  if (scrollY > 500) {
+    backToTopButton.classList.add('show');
+
+ } else {
+    backToTopButton.classList.remove('show');
+ }
 }
 
 function openMenu() {
@@ -29,4 +47,6 @@ ScrollReveal({
   #about,
   #about header,
   #about .content`)
+
+
 
